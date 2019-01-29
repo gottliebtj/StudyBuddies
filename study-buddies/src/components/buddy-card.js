@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
+import Avatar from '@material-ui/core/Avatar';
 
 
 const couponOutline = require('../icon/coupon-outline.png')
@@ -18,41 +19,26 @@ const styles = {
     display: 'inline-block',
     flexBasis: '25%',
     flexGrow: 1,
-    margin: 10,
-    width: '100%'
+    width: '100%',
+    textDecoration: 'none'
   },
   content: {
-    minHeight: 100
-  },
-  mediaWrapper: {
-    height: 200,
-    backgroundColor: '#ccc',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'contain',
-    backgroundPosition: 'center'
-  },
-  media: {
-    height: '100%',
-    width: '100%'
+    minHeight: 100,
+    textDecoration: 'none'
   }
 }
 
 const CouponCard = ({coupon, classes}) => (
-  <Card className={classes.card}>
-    <div className={classes.mediaWrapper}>
-      <CardMedia className={classes.media} image={coupon.couponImg} />
-    </div>
+  <Card className={classes.card} component={Link} to={coupon.id}>
     <CardContent className={classes.content}>
-      <Typography gutterBottom variant='headline' component='h2'>
-        {coupon.company}
+      <Avatar>{coupon.initials}</Avatar>
+      <Typography style={{display: 'inline'}} gutterBottom variant='headline' component='h2'>
+        {coupon.name}
       </Typography>
       <Typography component='p'>
-        {coupon.shortDescription}
+        {coupon.class}
       </Typography>
     </CardContent>
-    <CardActions>
-      <Button component={Link} to={coupon.id}>Redeem</Button>
-    </CardActions>
   </Card>
 )
 

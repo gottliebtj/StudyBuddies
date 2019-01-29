@@ -5,11 +5,10 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Header from './components/header'
 import SecondBar from './components/secondary'
 import content from './coupon-content.json'
-import CouponCard from './components/coupon-card'
+import CouponCard from './components/buddy-card'
+import Grid from '@material-ui/core/Grid'
 
 require('normalize.css')
-require('./index.styl')
-
 
 const RegisterPage = ({ props, match }) => {
 
@@ -21,14 +20,15 @@ const RegisterPage = ({ props, match }) => {
 }
 
 const IndexPage = ({ props, match }) => {
-  const fullcouponList = content.map((coupon) => <CouponCard key={coupon.id} coupon={coupon} />)
+
+  const fullcouponList = content.map((coupon) => <Grid key={coupon.id} item xs={12} sm={6} lg={4}> <CouponCard coupon={coupon} /> </Grid>)
 
   return (
     <div>
-      <Header title='SnapSmall' />
-      <SecondBar />
-      <div id='coupon-list'>
+      <div style={{flexGrow: 1}}>
+      <Grid container spacing={24}>
         {fullcouponList}
+      </Grid>
       </div>
     </div>
   )
