@@ -3,25 +3,33 @@
     "id": "0001",
     "name": "John Fish",
     "initials": "JF",
-    "class": "CE 2020"
+    "class": "CE 2020",
+    "percent": "20"
+
   },
   {
     "id": "0002",
     "name": "Sarah Lent",
     "initials": "SL",
-    "class": "PH 2001"
+    "class": "PH 2001",
+    "percent": "42"
+
   },
   {
     "id": "0003",
     "name": "Andrew Smith",
     "initials": "AS",
-    "class": "AB 1021"
+    "class": "AB 1021",
+    "percent": "2"
+
   },
   {
     "id": "0004",
     "name": "Ashley White",
     "initials": "AW",
-    "class": "AE 4041"
+    "class": "AE 4041",
+    "percent": "90"
+
   }
 
 ]

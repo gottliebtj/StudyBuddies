@@ -10,6 +10,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar';
+import { Circle } from 'rc-progress';
 
 
 const couponOutline = require('../icon/coupon-outline.png')
@@ -25,7 +26,11 @@ const styles = {
   content: {
     minHeight: 100,
     textDecoration: 'none'
+  },
+  circle: {
+    marginLeft: '90px'
   }
+
 }
 
 const CouponCard = ({coupon, classes}) => (
@@ -38,6 +43,13 @@ const CouponCard = ({coupon, classes}) => (
       <Typography component='p'>
         {coupon.class}
       </Typography>
+      <Circle className={classes.circle} style={{height:'200px',width:"200px"}} percent={coupon.percent} strokeWidth="4" strokeColor="#124dcc" />
+      <Typography  component='p'>
+        {coupon.percent}% completed
+      </Typography>
+      <CardActions>
+        <Button component={Link} to={coupon.id}>Go To Achievement Diary</Button>
+      </CardActions>
     </CardContent>
   </Card>
 )

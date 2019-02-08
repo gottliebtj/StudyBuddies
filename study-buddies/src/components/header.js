@@ -21,6 +21,9 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  title: {
+    color: 'white'
   }
 }
 
@@ -28,8 +31,8 @@ function ButtonAppBar (props) {
   const { title, classes } = props
   const barStyle = {
     // change the color of the header here
-    backgroundColor: '#2C3539',
-    height: '85px'
+    backgroundColor: '#000000',
+    height: '55px'
 
   }
 
@@ -37,9 +40,9 @@ function ButtonAppBar (props) {
     <div className={classes.root}>
       <AppBar style={barStyle} className='appbar' position='static'>
         <Toolbar>
-
-          <img className='imageStyle' src='https://image.ibb.co/d2fZBy/Webp_net_resizeimage.png' />
-
+        <Typography component='p' className ={classes.title}>
+          Study Buddies
+        </Typography>
           <Button component={Link} to='/register'>Register</Button>
         </Toolbar>
       </AppBar>
