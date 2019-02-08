@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import Table from './table'
 
 
 
@@ -11,14 +12,13 @@ const styles = theme => ({
   root: {
     margin: '0px auto',
     display: 'inline-block',
-    maxWidth: '750px',
-    padding: '20px'
+    height: "100%",
+    width:"100%"
   },
 
   div: {
-    margin: '35px auto',
     display: 'block',
-    textAlign: 'center'
+    textAlign: 'center',
   }
 
 })
@@ -29,7 +29,7 @@ const AchievementDiary = ({ diary, classes }) => (
       <Typography variant='headline' component='h1'>
         Tyler Gottlieb and {diary.name}
       </Typography>
-
+      <Table />
     </Paper>
   </div>
 )

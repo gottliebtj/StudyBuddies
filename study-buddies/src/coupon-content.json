@@ -30,6 +30,20 @@
     "class": "AE 4041",
     "percent": "90"
 
+  },
+  {
+    "id": "0005",
+    "name": "Reid Hill",
+    "initials": "RH",
+    "class": "SE 4041",
+    "percent": "49"
+  },
+  {
+    "id": "0006",
+    "name": "Kristina Powers",
+    "initials": "KP",
+    "class": "SE 2141",
+    "percent": "69"
   }
 
 ]

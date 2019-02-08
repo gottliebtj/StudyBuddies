@@ -24,6 +24,10 @@ const styles = {
   },
   title: {
     color: 'white'
+  },
+  register: {
+    float: 'right',
+    color: 'white'
   }
 }
 
@@ -43,7 +47,7 @@ function ButtonAppBar (props) {
         <Typography component='p' className ={classes.title}>
           Study Buddies
         </Typography>
-          <Button component={Link} to='/register'>Register</Button>
+          
         </Toolbar>
       </AppBar>
     </div>
