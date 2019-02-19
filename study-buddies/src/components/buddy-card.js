@@ -33,7 +33,8 @@ const styles = {
 
 }
 
-const CouponCard = ({coupon, classes}) => (
+
+const BuddyCard = ({coupon, classes}) => (
   <Card className={classes.card} component={Link} to={coupon.id}>
     <CardContent className={classes.content}>
       <Avatar>{coupon.initials}</Avatar>
@@ -54,8 +55,8 @@ const CouponCard = ({coupon, classes}) => (
   </Card>
 )
 
-CouponCard.propTypes = {
+BuddyCard.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(CouponCard)
+export default withStyles(styles)(BuddyCard)
