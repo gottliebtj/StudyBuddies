@@ -11,7 +11,14 @@ import Typography from '@material-ui/core/Typography'
 import AchievementDiary from './components/achievement-diary'
 import AllUsers from './components/queryComponents/allusersQuery'
 
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
 require('normalize.css')
+
+
+const client = new ApolloClient({
+  uri: 'https://staging.studytools.com/api/graphql',
+})
 
 const RegisterPage = ({ props, match }) => {
 
@@ -25,7 +32,9 @@ const RegisterPage = ({ props, match }) => {
 const AllUsersQuery = ({ props, match }) => {
     return (
       <div>
+      <ApolloProvider client={client}>
       <AllUsers />
+      </ApolloProvider>
       </div>
     )
 }
