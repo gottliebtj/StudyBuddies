@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import AchievementDiary from './components/achievement-diary'
 import AllUsers from './components/queryComponents/allusersQuery'
-
+import RegisterForm from './components/register'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 require('normalize.css')
@@ -24,7 +24,7 @@ const RegisterPage = ({ props, match }) => {
 
     return (
       <div>
-
+      <RegisterForm />
       </div>
     )
 
@@ -82,6 +82,7 @@ const App = () => (
   <Router>
     <div>
       <Switch>
+        <Route path='/register' component={RegisterForm} />
         <Route path='/allusers' component={AllUsersQuery} />
         <Route path='/:id' component={Achievements} />
         <Route component={IndexPage} />

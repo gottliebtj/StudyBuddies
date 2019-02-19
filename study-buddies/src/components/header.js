@@ -39,7 +39,6 @@ function ButtonAppBar (props) {
     height: '55px'
 
   }
-
   return (
     <div className={classes.root}>
       <AppBar style={barStyle} className='appbar' position='static'>
@@ -47,7 +46,7 @@ function ButtonAppBar (props) {
         <Typography component='p' className ={classes.title}>
           Study Buddies
         </Typography>
-          
+
         </Toolbar>
       </AppBar>
     </div>
