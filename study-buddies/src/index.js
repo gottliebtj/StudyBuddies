@@ -9,16 +9,7 @@ import CouponCard from './components/buddy-card'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import AchievementDiary from './components/achievement-diary'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-var cors = require('cors')
-
-
-const client = new ApolloClient({
-  uri: 'https://staging.studytools.com/api/graphql',
-})
+import AllUsers from './components/queryComponents/allusersQuery'
 
 require('normalize.css')
 
@@ -31,32 +22,14 @@ const RegisterPage = ({ props, match }) => {
     )
 
 }
-
-
-
-const AllUsersQuery = () => {
-  return(
-    <ApolloProvider client={client}>
-  <Query
-    query={gql`
-      {
-         users {
-          name
-
-        }
-      }
-    `}
-  >
-    {({ loading, error, data }) => {
-      if (loading) return <p>Good things take time....</p>
-      if (error) return <p>Something went wrong...</p>
-
-      return <div className="row">{data.users.map(user => <p>{user.id}, {user.name} </p> )}</div>
-    }}
-  </Query>
-  </ApolloProvider>
-)
+const AllUsersQuery = ({ props, match }) => {
+    return (
+      <div>
+      <AllUsers />
+      </div>
+    )
 }
+
 
 
 
